@@ -63,20 +63,12 @@ class Board
     !ships.any?(&:sunk?)
   end
 
-  def coord_in_grid(coord)
-    coords.include?(coord)
-  end
-
   def already_hit(coord)
     raise "You cannot hit the same square twice" if  grid[coord.to_s].hit?
   end
 
   def shoot(coord)
-    if coord_in_grid(coord)
-      if !already_hit(coord)
-        grid[coord.to_sym] = hit!
-      end
-    end
+    if !already_hit(coord) then grid[coord.to_sym] = hit! end
   end
 
   private

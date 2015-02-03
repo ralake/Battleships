@@ -47,14 +47,6 @@ describe Board  do
 
   context 'placing ships' do
 
-    it 'does allow the player to place the ships inside the board' do
-      expect(board.coord_in_grid('A2')).to be true
-    end
-
-    it 'does not allow the player to place the ship outside the board' do
-      expect(board.coord_in_grid('A12')).to be false
-    end
-
     it 'can place the ship horizontally' do
       orientation = 'horizontal'
       expect(board.place(ship, 'A1', orientation)).to eq(["A1", "A2"])
