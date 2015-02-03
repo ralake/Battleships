@@ -3,31 +3,15 @@ Battleships
 [![Code Climate](https://codeclimate.com/github/ralake/Battleships/badges/gpa.svg)](https://codeclimate.com/github/ralake/Battleships)
 
 Makers Academy Week 2 Exercise
+ 
+Cell
+----
 
-
-
-##CRC Cards##
-
-                                          Cell  
-
-**Responsibility**                     
-- Has coordinates                  
-- Knows if its empty              
-- Knows if it is full             
-- Knows if its hit       
-- Knows if not hit
-- Can't be hit twice
-
-========================
-
-**Collaborators**
-- Player
-- Ship
-- Board
-
-
-========================
-
+| Responsibilities | Collaborators |
+-------------------|--------------
+| Knows its contents | Player |          
+| Knows if it has been hit | Ship |
+| | Board |
 
                                            Primary Board  
 
