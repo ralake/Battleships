@@ -3,7 +3,7 @@ class Player
   attr_accessor :board
 
   def board
-    !@board.nil?
+    @board
   end
 
   def receive_shot(coordinates)

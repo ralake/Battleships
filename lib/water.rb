@@ -4,9 +4,8 @@ class Water
     @hit = false
   end
 
-  def hit!
+  def hit
     @hit = true
-    self
   end
 
   def hit?

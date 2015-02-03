@@ -8,7 +8,7 @@ class Board
     @coords = []
     rows
     columns
-    gridded
+    fill_with_water
   end
 
   def columns
@@ -19,15 +19,16 @@ class Board
     @numbers = [*1..10]
   end
 
-  def setting_coordinates
+  def set_coordinates
     @letters.each do |letter|
-      @numbers.map {|number| @coords << letter + number.to_s }
+      create_coords(letter)
     end
   end
 
-  def gridded
-    self.setting_coordinates
-    @coords.each{|element| @grid[element.to_sym] = Cell.new(Water.new)}
+
+  def fill_with_water
+    set_coordinates
+    @coords.each{ |coord| @grid[coord.to_sym] = Cell.new(Water.new)}
   end
 
   def next_coord(coord, orientation)
@@ -39,15 +40,19 @@ class Board
   end
 
   def place(ship, coord, orientation)
+    coords = prepare_coords(ship, coord, orientation)
+    coords.each { |coord| @grid[coord.to_sym].content = ship  }
+  end
+
+  def prepare_coords(ship, coord, orientation)
     coords = [coord]
-    ship.length.times{coords << next_coord(coords.last, orientation)}
+    ship.length.times { coords << next_coord(coords.last, orientation) }
     coords.pop
-    p coords
-    coords.each{ |coord| @grid[coord.to_sym].content = ship  }
+    coords
   end
 
   def ships
-    @grid.values.select{|cell| cell.content.is_a?(Ship)}.map(&:content).uniq
+    @grid.values.select { |cell| cell.content.is_a?(Ship) }.map(&:content).uniq
   end
 
   def ship_count
@@ -72,6 +77,12 @@ class Board
         grid[coord.to_sym] = hit!
       end
     end
+  end
+
+  private
+
+  def create_coords(letter)
+    @numbers.map { |number| @coords << letter + number.to_s }
   end
 
 end

@@ -13,52 +13,54 @@ describe Board  do
   def initialize_grid
     board.columns
     board.rows
-    board.setting_coordinates
+    board.set_coordinates
   end
 
-  it 'has a grid of 100 cells' do
-    board.gridded
-    expect(board.grid.size).to be(100)
+  before do
+    initialize_grid
   end
 
-  it 'should have coordinates' do
-    expect(board.grid[:A1]).to be_an_instance_of(Cell)
-  end
+  context 'coords...' do
 
-  context 'placing ships' do
+    it 'has a grid of 100 cells' do
+      board.fill_with_water
+      expect(board.grid.size).to be(100)
+    end
+
+    it 'should have coordinates' do
+      expect(board.grid[:A1]).to be_an_instance_of(Cell)
+    end
 
     it 'knows which one will be the next horizontal coordinate' do
       orientation = 'horizontal'
       coord = 'A1'
-      initialize_grid
       expect(board.next_coord(coord, orientation)).to eq('A2')
     end
 
     it 'knows which one will be the next vertical coordinate' do
       orientation = 'vertical'
       coord = 'A1'
-      initialize_grid
       expect(board.next_coord(coord, orientation)).to eq('B1')
     end
 
+  end
+
+  context 'placing ships' do
+
     it 'does allow the player to place the ships inside the board' do
-      initialize_grid
       expect(board.coord_in_grid('A2')).to be true
     end
 
     it 'does not allow the player to place the ship outside the board' do
-      initialize_grid
       expect(board.coord_in_grid('A12')).to be false
     end
 
     it 'can place the ship horizontally' do
-      initialize_grid
       orientation = 'horizontal'
       expect(board.place(ship, 'A1', orientation)).to eq(["A1", "A2"])
     end
 
     it 'can place the ship vertically' do
-      initialize_grid
       orientation = 'vertical'
       expect(board.place(ship, 'B1', orientation)).to eq(["B1", "C1"])
     end

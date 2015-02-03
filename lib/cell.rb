@@ -7,9 +7,9 @@ class Cell
     @shot_at = false
   end
 
-  def hit!
+  def hit
     @shot_at = true
-    @content.hit!
+    @content.hit
   end
 
   def hit?

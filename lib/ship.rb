@@ -12,10 +12,9 @@ class Ship
     @hit
   end
 
-  def hit!
+  def hit
     @hit = true
     @number_of_hits += 1
-    self
   end
 
   def sunk?

@@ -10,13 +10,13 @@ describe Cell do
   end
 
   it 'can be hit' do
-    expect(cell).to receive(:hit!)
-    cell.hit!
+    expect(cell).to receive(:hit)
+    cell.hit
   end
 
   it 'knows when it has been shot at' do
-    allow(water).to receive(:hit!)
-    cell.hit!
+    allow(water).to receive(:hit)
+    cell.hit
     expect(cell).to be_shot_at
   end
 
@@ -30,8 +30,8 @@ describe Cell do
   end
 
   it 'will allow its content to be hit' do
-    expect(water).to receive(:hit!)
-    cell.hit!
+    expect(water).to receive(:hit)
+    cell.hit
   end
 
 end

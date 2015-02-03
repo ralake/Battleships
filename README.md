@@ -1,27 +1,10 @@
-#Battle Ships#
+Battleships
+===========
+[![Code Climate](https://codeclimate.com/github/ralake/Battleships/badges/gpa.svg)](https://codeclimate.com/github/ralake/Battleships)
+
+Makers Academy Week 2 Exercise
 
 
-For our second week at Makers, we have been asked to design a game called Battle Ships modulated on the board game, where there are two players and each player takes turns in trying to sink the opponent ships.
-The winner is the player who sinks all of the opponent's ships. 
-
-
-We are **_Team D_** and our members include:
-
-- Shan Hasan
-- Giorgia Amici
-- Richard Lake
-- Edward Byne
-- Dale Stevens
-
-==========================
-
-Skills involved:
-- Agile Method
-- Ruby
-- rspec
-
-
-=========
 
 ##CRC Cards##
 

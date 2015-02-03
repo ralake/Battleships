@@ -9,16 +9,17 @@ describe Ship do
   end
 
   it 'can be hit' do
-    expect(ship.hit!).to be_hit
+    ship.hit
+    expect(ship).to be_hit
   end
 
   it 'is not sunk unless hit a number of times equal to its length' do
-    2.times { ship.hit! }
+    2.times { ship.hit }
     expect(ship).not_to be_sunk
   end
 
   it 'knows when it is sunk' do
-    ship.length.times { ship.hit! }
+    ship.length.times { ship.hit }
     expect(ship).to be_sunk
   end
 
