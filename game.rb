@@ -8,8 +8,8 @@ class Game
 
   def add_player(player)
     raise "The game already has two players" if players.count >= 2
-  	self.players << player
-	end
+    self.players << player
+  end
 
   def attacker
     players[0]
