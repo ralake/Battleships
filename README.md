@@ -8,7 +8,7 @@ Brief
 -----
 Create a version of the classic Battleships game in Ruby. This was done as a team of four consistently swapping pair partners. Battleships is a **game** of two **players** who each have a **board** onto which they can place 5 different **ships**. The board is constructed of a grid containing one hundred **cells** which in turn 'contain' **water**. The players take turns to fire at their enemies board until the winner has sunk the last of the losers ships.
 
-Our team broke this out into five classes...
+Our team broke this out into six classes...
  
 1. Player
 ---------
