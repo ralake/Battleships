@@ -32,10 +32,10 @@ Board
 
 | Responsibilities | Collaborators |
 -------------------|---------------|
-| Is a fixed size | Cell |  
-| Is initiated empty | Player |
+| Has a fixed size | Cell |  
+| Is initialized empty | Player |
 | Allows ships to be placed | Ships |
-| marks cells as hit | |    
+| marks cells as hit when they are fired upon | |    
 
 Cell
 ----
