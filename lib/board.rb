@@ -25,7 +25,6 @@ class Board
     end
   end
 
-
   def fill_with_water
     set_coordinates
     @coords.each{ |coord| @grid[coord.to_sym] = Cell.new(Water.new)}

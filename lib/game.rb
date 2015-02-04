@@ -8,7 +8,7 @@ class Game
 
   def add_player(player)
     raise "The game already has two players" if players.count >= 2
-  	self.players << player
+  	players << player
 	end
 
   def attacker
@@ -28,7 +28,7 @@ class Game
   end
 
   def has_ships?
-    attacker.board.ship_count == 5 and opponent.board.ship_count == 5
+    attacker.board.ship_count and opponent.board.ship_count == 5
   end
 
   def ready?

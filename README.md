@@ -4,6 +4,39 @@ Battleships
 
 Makers Academy Week 2 Exercise
  
+Player
+------
+
+| Responsibilities | Collaborators |
+-------------------|---------------|
+| Can place a ship on the board | Board |
+| Can fire at a co-ordinate on the board | Cell |
+| Can win or lose | Ship |
+| Waits there turn to fire |
+
+Game
+-----
+
+| Responsibilities | Collaborators |
+-------------------|---------------|
+| Can have two players | Player |
+| Can have ships | Ship |
+| Knows whose turn it is | Board |
+| Can switch turns | |
+| Knows when the game is ready to play | |
+| Knows when a player has won or lost | |
+
+
+Board
+-----
+
+| Responsibilities | Collaborators |
+-------------------|---------------|
+| Is a fixed size | Cell |  
+| Is initiated empty | Player |
+| Allows ships to be placed | Ships |
+| marks cells as hit | |    
+
 Cell
 ----
 
@@ -13,71 +46,23 @@ Cell
 | Knows if it has been hit | Ship |
 | | Board |
 
-                                           Primary Board  
 
-**Responsibility**        
-- Is a fixed size       
-- Is initiated empty   
-- Will accept ships     
+Ship
+----
 
-=========================
+| Responsibilities | Collaborators |
+-------------------|---------------|
+| Can vary in size | Cell |
+| Can be hit | Board |
+| Can be sunk | Player |
 
-**Collaborators**
-- Cell
-- Board
-- Player
+Water
+-----
 
-====================================
-
-
-                                           Tracking Board  
-**Responsibility** 
-
-- Is a fixed size 
-- Is initiated empty 
-- Will mark cells 
-
-==============================================
-**Collaborators**
-- Cell
-- Primary Board
-- Player
-
-===============================================
-
-          
-                                                 Ship  
-
-**Responsibility**        
-- It has a set size         
-- Can be hit            
-- Sinks when full hit    
-
-=======================================
-**Collaborators**
-- Cell
-- Board
-- Player
-
-===========================================
-
-                                         
-                                              Player  
-
-**Responsibility**                  
-- Set number of ships                
-- Places ships on primary grid      
-- Fires shots at tracking grid     
-- Can win or loose                
-- Takes turns to fire
+| Responsibilities | Collaborators |
+-------------------|---------------|
+| Can be hit | Cell |
+| Knows if it has been hit | |
 
 
 
-=================================================
-**Collaborators**
-- Ship
-- Board
-- Cell
-
-
-==========================================
