@@ -31,6 +31,7 @@ class Board
   end
 
   def next_coord(coord, orientation)
+    # orientation == 'horizontal' ? coord.next : coord.reverse.next.reverse
     if orientation == 'horizontal'
       coord.next
     elsif orientation == 'vertical'
